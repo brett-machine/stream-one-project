@@ -32,5 +32,12 @@ angular.module('mybandApp').config(function($routeProvider) {
 			templateUrl : 'templates/contact.html',
 			controller  : 'ContactController'
 		})
+		// route for the Find page
+		.when('/footer', {
+			templateUrl : 'templates/footer.html',
+			controller  : 'FooterController'
+		})
+
+		
 		.otherwise({redirectTo: '/'}); //if not above path
 });
