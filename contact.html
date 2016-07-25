@@ -1,0 +1,131 @@
+ <section id="gigs" class="gigs-section section">
+ <div class="container vertical-center">
+        
+        <div class="map-container">
+    		<img class="img-thumbnail img-responsive" src="https://maps.googleapis.com/maps/api/staticmap?center={{map.address}}&zoom={{map.zoom}}&size={{mapDimensions()}}&markers=color:red|{{map.address}}" />
+   			 <br />
+    <div class="zoom-controls">
+        <button class="zoom-button btn btn-primary" ng-click="zoomIn()">
+            <span class="glyphicon glyphicon-plus"></span>
+        </button>
+        <button class="zoom-button btn btn-primary" ng-click="zoomOut()">
+            <span class="glyphicon glyphicon-minus"></span>
+        </button>
+    </div>
+		</div>
+		
+        <div class="container"> 	<form class='viewType' name="register_form" novalidate ng-submit="registerForm(register_form)">
+	  	<fieldset>
+	    	<legend class="section-title text-center">Get in Touch to book for Private Events</legend>
+	    	<div class="row">
+
+				<div class="col-offset-md-4 col-md-4">
+			  		<label>Username</label>
+					<input class="form-control"
+						type="text" 
+						placeholder="Enter Username" 
+						name="username" 
+						ng-model="register.username" 
+						ng-minlength=3 
+						ng-maxlength=20 
+						required  />
+				</div>
+				<div class="col-md-5 error-container" ng-show="register_form.username.$dirty 
+														&& register_form.username.$invalid 
+														&& submitted">
+					<!--error messages for username-->
+					<label style='color: red'>Error:</label>
+					<p class="error" ng-show="register_form.username.$error.required">Please input a username</p>
+					<p class="error" ng-show="register_form.username.$error.minlength">Your username is required to be at least 3 characters</p>
+					<p class="error" ng-show="register_form.username.$error.maxlength">Your username cannot be longer than 20 characters</p>
+				</div>
+			</div>
+			
+
+			<div class="row">
+				<div class="col-offset-md-4 col-md-4 center">
+			  		<label>Email</label>
+					<input class="form-control"
+						type="email" 
+						placeholder="Enter email" 
+						name="email" 
+						ng-model="register.email" 
+						ng-minlength=5 
+						ng-maxlength=15
+						required  />
+				</div>
+				<div class="col-md-5 error-container" ng-show="register_form.email.$dirty 
+														&& register_form.email.$invalid 
+														&& submitted">
+					<!--error messages for email-->
+					<label style='color: red'>Error:</label>
+					<p class="error" ng-show="register_form.email.$error.required">Please input an email</p>
+					<p class="error" ng-show="register_form.email.$error.minlength">Your email is required to be at least 5 characters</p>
+					<p class="error" ng-show="register_form.email.$error.maxlength">Your email cannot be longer than 15 characters</p>
+					<p class="error" ng-show="register_form.email.$error.email">That is not a valid email. Please input a valid email.</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-offset-md-4 col-md-4">
+			  		<label>Phone Number</label>
+					<input class="form-control"
+						type="number" 
+						placeholder="Enter phone number" 
+						name="number" 
+						ng-model="register.number" 
+						ng-minlength=5 
+						ng-maxlength=15
+						required  />
+				</div>
+				<div class="col-md-5 error-container" ng-show="register_form.number.$dirty 
+														&& register_form.number.$invalid 
+														&& submitted">
+					<!--error messages for email-->
+					<label style='color: red'>Error:</label>
+					<p class="error" ng-show="register_form.number.$error.required">Please input an number</p>
+					<p class="error" ng-show="register_form.number.$error.minlength">Your number is required to be at least 8 characters</p>
+					<p class="error" ng-show="register_form.number.$error.maxlength">Your number cannot be longer than 15 characters</p>
+					<p class="error" ng-show="register_form.number.$error.number">That is not a valid number. Please input a valid number.</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-offset-md-2 col-md-4">
+			  		<label>Your Message</label>
+					<input class="form-control"
+						type="text" 
+						placeholder="Write Your Message" 
+						name="message" 
+						ng-model="register.message" 
+						ng-minlength=10
+						ng-maxlength=250
+						required  />
+				</div>
+				<div class="col-md-5 error-container" ng-show="register_form.message.$dirty 
+														&& register_form.message.$invalid 
+														&& submitted">
+					<!--error messages for email-->
+					<label style='color: red'>Error:</label>
+					<p class="error" ng-show="register_form.message.$error.required">Please input an Message</p>
+					<p class="error" ng-show="register_form.message.$error.minlength">Your message is required to be at least 10 characters</p>
+					<p class="error" ng-show="register_form.message.$error.maxlength">Your email cannot be longer than 250 characters</p>
+					<p class="error" ng-show="register_form.message.$error.message">That is not a valid message. Please input a valid message.</p>
+				</div>
+			</div>
+		
+			<br/>
+			<button type="submit" class="btn btn-primary">Submit</button>
+			<!--error messages if username or email are not unique-->
+			<div class="error-container" ng-show="submitted"> 
+	   			<p class="error" ng-show="!uniqueusername">username already taken</p>
+	   			<p class="error" ng-show="!uniqueemail">email is already registered</p>
+			</div>
+			
+	  	</fieldset>
+	</form>
+
+
+            </div><!--//gigs-->
+        </div><!--//container-->
+    </section><!--//gigs-section-->
