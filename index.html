@@ -1,62 +1,30 @@
 <!doctype html>
-<html ng-app='mybandApp'>
- <head>
-  <title>My Band</title>
-  <link href="css/vendor/bootstrap.min.css" rel="stylesheet">
-  <link href="css/vendor/animate.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
-  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
-  <!--<link href="css/grayscale.css" rel="stylesheet">-->
-  <script src="http://yui.yahooapis.com/3.18.1/build/yui/yui-min.js"></script>
-  <script src="javascript/vendor/angular.min.js"></script>
-    <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-animate.min.js"></script>-->
-  
-  <script src="javascript/vendor/angular-sanitize.min.js"></script>
-  <script src="javascript/vendor/angular-animate.min.js"></script>
-  <script src="javascript/vendor/angular-route.min.js"></script> 
-  <script src="javascript/vendor/jquery-1.11.3.min.js"></script>
-  <script src="javascript/vendor/bootstrap.min.js"></script>
+<html>
+    <head>
+        <title>The Monkeys</title>
+        <!-- include the bootstrap css -->
+        <link href="css/vendor/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+ 
+        <!-- include our vendor js -->
+        <script src="js/vendor/angular.min.js">
+        </script>
+        <script src="js/vendor/angular-route.min.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+    </head>
+    <!-- set our ng-app in the body -->
+    
+    <body ng-app="mybandApp">
+    <!-- this is where our templates will be injected -->
+        <header ng-include="'templates/nav.html'"></header>
+        <div ng-view>
+                
 
-</head>
-
-  <body>
-    <header>
-  <nav class="navbar navbar-inverse">   
-    <div class='container' >
-        <div class="nav navbar-header">
-          <a class="navbar-brand" href="#/home">MyBand</a>
-          <button type="button" class="navbar-toggle" 
-            data-toggle="collapse" 
-            data-target="#myCollapsingList">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-          </button>
         </div>
-        <div class="collapse navbar-collapse" id="myCollapsingList" ng-controller='MenuController'>
-          <ul class="nav navbar-nav navbar-right">
-         <li><a  href="#/home">Home</a></li>
-         <li><a  href="#/about">About</a></li>       
-          <li><a href='#/music'>Music</a></li>
-          <li><a href='#/gigs'>Gigs</a></li>
-          <li><a href='#/theband'>The Band</a></li>      
-          <li><a href='#/contact'>Contact</a></li>
-          </ul>
-         </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-     
-    </header>
-    <div ng-view></div>
-  </body>
-
-  <script src='javascript/app.js'></script>
-  <script src='javascript/controller.js'></script>
-  <script src='javascript/directive.js'></script>
-  <script src='javascript/service.js'></script>
-
+        <footer ng-include="'templates/footer.html'"></footer>
+    </body>
+    <!-- these are our app specific javascript files -->
+    <script src="js/app.js"></script>
+    <script src="js/controller.js"></script>
+    <script src='js/directive.js'></script>
 </html>
